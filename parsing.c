@@ -59,10 +59,8 @@ int	check_quote(char c, int quote, int *boa)
 
 int	parsing(t_msh *msh, char **env)
 {
-	int	line;
 	(void)env;
 	
-	line = 0;
 	msh->pro = ft_space(msh->line);
 	ft_fill_struct(msh);
 //	printf("STR = %s\n", msh->first->str);

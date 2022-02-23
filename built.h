@@ -6,7 +6,7 @@
 /*   By: malbrand <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/26 02:31:26 by malbrand          #+#    #+#             */
-/*   Updated: 2021/12/06 21:34:35 by malbrand         ###   ########.fr       */
+/*   Updated: 2022/02/23 03:01:48 by edvicair         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@
 # include <stdlib.h>
 # include <limits.h>
 # include <readline/readline.h>
+# include <readline/history.h>
 
 typedef struct s_msh
 {

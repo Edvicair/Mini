@@ -6,7 +6,7 @@
 /*   By: malbrand <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/26 02:31:26 by malbrand          #+#    #+#             */
-/*   Updated: 2021/12/06 21:34:35 by malbrand         ###   ########.fr       */
+/*   Updated: 2022/02/23 03:01:24 by edvicair         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -113,16 +113,22 @@ int	main(int ac, char **av, char **env)
 	{
 		msh.line = readline(PROMPT);
 		ft_fill_struct(&msh);
+		add_history(msh.line);
 		/*
 		if (!parsing(&msh, env))
 			printf("ERROOOOOOOOOOR\n");
 		else
 			ft_choose_algo(&msh, env);
 			*/
-		while (msh.first->str[i])
+		while (msh.first)
 		{
-			printf("str[%d] = %s\n", i, msh.first->str[i]);
-			i++;
+			while (msh.first->str[i])
+			{
+				printf("str[%d] = %s\n", i, msh.first->str[i]);
+				i++;
+			}
+			i = 0;
+			msh.first = msh.first->next;
 		}
 	//	ft_free_lst(&msh);
 	}

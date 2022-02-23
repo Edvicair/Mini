@@ -16,10 +16,13 @@ char	*ft_strdup_bis(char **str, int max)
 
 	i = 0;
 	j = 0;
+	printf("s = %c\n", str[0][i]);
 	if (str[0][i] == '|')
 	{
-		s = malloc(sizeof(char) * max);
 		i++;
+		while (str[0][i] == ' ')
+			i++;
+		s = malloc(sizeof(char) * (max - i) + 1);
 	}
 	else
 		s = malloc(sizeof(char) * (max + 1));
@@ -27,7 +30,7 @@ char	*ft_strdup_bis(char **str, int max)
 		return (0);
 	while (str[0][i] && i < max)
 	{
-		while (str[0][i] == '|' || str[0][i] == ';')
+		while (str[0][i] == '|')
 		{
 			i++;
 			while (str[0][i] == ' ')
@@ -65,7 +68,7 @@ char	**ft_strtok(char *str)
 	}
 	if (str[i] == '\0' && (str[i - 1] != ';' && str[i - 1] != '|'))
 		j++;
-	s = (char **)malloc(sizeof(char *) * j + 1);
+	s = (char **)malloc(sizeof(char *) * (j + 2));
 	if (!s)
 		return (NULL);
 	i = 0;
@@ -89,7 +92,6 @@ char	**ft_strtok(char *str)
 		j++;
 	}
 	s[j] = NULL;
-	free(str);
 	return (s);
 }
 
